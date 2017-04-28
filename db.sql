@@ -1,3 +1,9 @@
+/*
+SQLyog Ultimate v11.11 (64 bit)
+MySQL - 5.7.18-0ubuntu0.16.04.1 : Database - typescriptexpress
+*********************************************************************
+*/
+
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
@@ -18,18 +24,16 @@ CREATE TABLE `tbl_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `is_active` tinyint(1) DEFAULT '1',
+  `email` varchar(100) NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_username` (`username`),
-  UNIQUE KEY `idx_email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `tbl_user` */
 
-insert  into `tbl_user`(`id`,`username`,`password`,`email`,`is_active`,`created_at`,`updated_at`) values (1,'admin','sha1$3afa2e4b$1$1f8c05044dd2f1e214ab6c768516f6aab0447ed7','tuanquynh0508@gmail.com',1,'2016-11-29 20:33:03','2016-11-30 22:42:20');
+insert  into `tbl_user`(`id`,`username`,`password`,`email`,`is_active`,`created_at`,`updated_at`) values (1,'admin','sha1$b07112be$1$7dc6dd6804c5a93b9e3ad19fe8fbc54c7f84cf9a','tuanquynh0508@gmail.com',1,'2017-04-28 04:35:30',NULL),(2,'supended','sha1$9b9c7448$1$bbbc2a38ec9148c09c7eea3a69f923de6a88af9e','supended-account@gmail.com',0,'2017-04-28 04:35:30',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

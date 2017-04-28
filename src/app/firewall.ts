@@ -49,6 +49,7 @@ export class Firewall {
                 } else {
                     // if everything is good, save to request for use in other routes
                     // req.decoded = decoded;
+                    req.session.user_id = decoded.id;
                     next();
                 }
             });

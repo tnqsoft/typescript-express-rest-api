@@ -31,6 +31,8 @@ module.exports = function(grunt) {
         options: {
           module: "commonjs",
           target: "es6",
+          experimentalDecorators: true,
+          emitDecoratorMetadata: true,
           sourceMap: false
         }
       }

@@ -3,10 +3,12 @@ import * as cookieParser from 'cookie-parser';
 import * as express from 'express';
 import * as logger from 'morgan';
 import * as path from 'path';
+import * as session from 'express-session';
 import errorHandler = require('errorhandler');
 import methodOverride = require('method-override');
-
 import { appRouting } from './routing';
+import { appConfig } from './configs';
+import { DBConnect } from './app/db-connect';
 
 /**
  * The server.
@@ -36,6 +38,8 @@ export class Server {
    * @constructor
    */
   constructor() {
+    DBConnect.connect();
+
     // create expressjs application
     this.app = express();
 
@@ -66,6 +70,15 @@ export class Server {
     this.app.use(bodyParser.urlencoded({
       extended: true
     }));
+
+    this.app.use(
+      session({
+        secret: appConfig.secret,
+        cookie: {
+          maxAge: 60000
+        }
+      })
+    );
 
     // use cookie parker middleware middlware
     this.app.use(cookieParser('SECRET_GOES_HERE'));

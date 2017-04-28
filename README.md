@@ -2,7 +2,8 @@ Typescript + Node + Express create Restful API
 ===
 
 
-#Command Helpful
+Command Helpful
+---
 ```
 npm init
 npm install express --save
@@ -25,6 +26,10 @@ npm install ip --save
 npm install password-hash --save
 npm install cors --save
 npm install moment --save
+npm install mysql --save
+npm install typeorm --save
+npm install reflect-metadata --save
+npm install express-session --save
 
 npm install @types/body-parser --save-dev
 npm install @types/cookie-parser --save-dev
@@ -35,17 +40,20 @@ npm install @types/jsonwebtoken --save-dev
 npm install @types/ip --save-dev
 npm install @types/password-hash --save-dev
 npm install @types/cors --save-dev
+npm install @types/mysql --save-dev
+npm install @types/express-session --save-dev
 >>> Deprecated >>> npm install @types/moment --save-dev
 ```
 
-#Run
+Run
+---
 ```
 npm run grunt
 npm start
 npm run rebuild
 ```
 
-#Reference
+Reference
 ---
 http://brianflove.com/2016/11/08/typescript-2-express-node/
 
