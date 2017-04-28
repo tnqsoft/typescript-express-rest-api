@@ -91,6 +91,6 @@ export class Server {
    */
   public routes() {
     // use router middleware
-    this.app.use(appRouting());
+    this.app.use('/api', appRouting());
   }
 }

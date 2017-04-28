@@ -16,9 +16,8 @@ export class HelloRouting extends BaseRouting {
     });
 
     this.router.post('/hello/demo', (req: Request, res: Response, next: NextFunction) => {
-      controller.demoAction(req, res, next);
+      controller.postDemoAction(req, res, next);
     });
-
   }
 
 }
