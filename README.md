@@ -2,8 +2,7 @@ Typescript + Node + Express create Restful API
 ===
 
 
-Command Helpful
----
+## Command Helpful
 ```
 npm init
 npm install express --save
@@ -46,8 +45,7 @@ npm install @types/express-session --save-dev
 >>> Deprecated >>> npm install @types/moment --save-dev
 ```
 
-Run
----
+## Run
 ```
 npm run grunt
 npm start
@@ -68,8 +66,10 @@ $ openssl genrsa -out var/jwt/private.pem -aes256 4096
 $ openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
 ```
 
-Reference
----
+### Gen online
+http://travistidwell.com/jsencrypt/demo/
+
+##Reference
 http://brianflove.com/2016/11/08/typescript-2-express-node/
 
 http://brianflove.com/2016/03/29/typescript-express-node-js/
