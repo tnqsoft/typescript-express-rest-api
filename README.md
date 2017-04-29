@@ -54,6 +54,20 @@ npm start
 npm run rebuild
 ```
 
+### Gen RSA Key on Windows by Xampp
+```
+mkdir -p var/jwt # For Symfony3+, no need of the -p option
+D:\xampp\apache\bin\openssl.exe genrsa -out var/jwt/private.pem -aes256 4096
+D:\xampp\apache\bin\openssl.exe rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
+```
+
+### Gen RSA Key on Linux
+```
+mkdir -p var/jwt # For Symfony3+, no need of the -p option
+$ openssl genrsa -out var/jwt/private.pem -aes256 4096
+$ openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
+```
+
 Reference
 ---
 http://brianflove.com/2016/11/08/typescript-2-express-node/

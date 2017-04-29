@@ -96,7 +96,7 @@ export class UserController {
    * @returns {string}
    */
    private createToken(user: User): string {
-    let cert = fs.readFileSync(__dirname + '/../../app/jwt/private.pem').toString();
+    let privateKeyRsa = fs.readFileSync(__dirname + '/../../app/jwt/private.pem').toString();
 
     let data = {
       id: user.id,
@@ -105,7 +105,7 @@ export class UserController {
       // exp: Math.floor(Date.now() / 1000) + (60 * 60)
     }
 
-    return jwt.sign(data, cert, {
+    return jwt.sign(data, privateKeyRsa, {
       algorithm: 'RS256',
       expiresIn: '3 days'
     });

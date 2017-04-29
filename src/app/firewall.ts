@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response, Router } from 'express';
 import * as jwt from 'jsonwebtoken';
 import * as ip from 'ip';
+import * as fs from 'fs';
 import { appConfig } from '../configs';
 
 /**
@@ -35,8 +36,9 @@ export class Firewall {
 
         // decode token
         if (token) {
+            let publicKeyRsa = fs.readFileSync(__dirname + '/jwt/public.pem').toString();
             // verifies secret and checks exp
-            jwt.verify(token, appConfig.secret, function (err, decoded) {
+            jwt.verify(token, publicKeyRsa, function (err, decoded) {
                 if (
                     err || typeof decoded.ip === 'undefined'
                     || (typeof decoded.ip !== 'undefined'
