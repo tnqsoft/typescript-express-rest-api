@@ -30,6 +30,7 @@ npm install mysql --save
 npm install typeorm --save
 npm install reflect-metadata --save
 npm install express-session --save
+npm install node-fs --save
 
 npm install @types/body-parser --save-dev
 npm install @types/cookie-parser --save-dev

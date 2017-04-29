@@ -25,6 +25,7 @@
     "moment": "^2.18.1",
     "morgan": "^1.8.1",
     "mysql": "^2.13.0",
+    "node-fs": "^0.1.7",
     "password-hash": "^1.2.2",
     "reflect-metadata": "^0.1.10",
     "typeorm": "0.0.11"

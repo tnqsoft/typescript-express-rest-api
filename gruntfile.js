@@ -12,6 +12,12 @@ module.exports = function(grunt) {
             cwd: "./public",
             src: ["**"],
             dest: "<%= distdir %>/public"
+          },
+          {
+            expand: true,
+            cwd: "./src/app/jwt",
+            src: ["**"],
+            dest: "<%= distdir %>/app/jwt"
           }
           // {
           //   expand: true,

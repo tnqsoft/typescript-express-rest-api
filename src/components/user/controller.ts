@@ -3,6 +3,7 @@ import * as moment from 'moment';
 import * as passwordHash from 'password-hash';
 import * as jwt from 'jsonwebtoken';
 import * as ip from 'ip';
+import * as fs from 'fs';
 import { Connection, Repository, getConnection } from 'typeorm';
 import { User } from '../../app/entity/user';
 import { UserRepository } from '../../app/repository/user-repository';
@@ -94,15 +95,20 @@ export class UserController {
    * @param {User} user
    * @returns {string}
    */
-  private createToken(user: User): string {
+   private createToken(user: User): string {
+    let cert = fs.readFileSync(__dirname + '/../../app/jwt/private.pem').toString();
+
     let data = {
       id: user.id,
       username: user.username,
-      ip: ip.address(),
-      exp: Math.floor(Date.now() / 1000) + (60 * 60)
+      ip: ip.address()
+      // exp: Math.floor(Date.now() / 1000) + (60 * 60)
     }
 
-    return jwt.sign(data, appConfig.secret);
+    return jwt.sign(data, cert, {
+      algorithm: 'RS256',
+      expiresIn: '3 days'
+    });
   }
 
 }
