@@ -69,7 +69,7 @@ $ openssl rsa -pubout -in var/jwt/private.pem -out var/jwt/public.pem
 ### Gen online
 http://travistidwell.com/jsencrypt/demo/
 
-##Reference
+## Reference
 http://brianflove.com/2016/11/08/typescript-2-express-node/
 
 http://brianflove.com/2016/03/29/typescript-express-node-js/
